@@ -1,6 +1,8 @@
 # This file is used by Rack-based servers to start the application.
 
-require_relative "config/environment"
+require 'capistrano/rails'
+require 'capistrano/passenger'
+require 'capistrano/rbenv'
 
-run Rails.application
-Rails.application.load_server
+set :rbenv_type, :user
+set :rbenv_ruby, '3.0.3'
