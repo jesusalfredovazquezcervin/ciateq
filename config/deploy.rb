@@ -2,7 +2,7 @@
 lock "~> 3.16.0"
 
 set :application, "ejercicio"
-set :repo_url, "git@github.com:jesusalfredovazquezcervin/ejerciciociateq.git"
+set :repo_url, "git@github.com:jesusalfredovazquezcervin/ciateq.git"
 set :deploy_to, "/home/deploy/#{fetch :application}"
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 set :keep_releases, 5
