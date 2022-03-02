@@ -1,0 +1,42 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Users</h1>
+
+<div id="users">
+<div class="card-body">
+   <table class="table table-striped my-4 w-100" id="datatable2">
+      <thead>
+         <tr>
+            <th>ID</th>
+            <th data-priority="1">User Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th class="sort-numeric">Birth Date</th>
+            <th class="sort-alpha" data-priority="2">Gender</th>
+            <th>Actions</th>
+         </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+           <td><%= user.id%></td>
+           <td><%= user.userName %></td>
+           <td><%= user.firstName %></td>
+           <td><%= user.lastName %></td>
+           <td><%= user.birthDate %></td>
+           <td><%= user.gender %></td>
+           <td><%= link_to 'Show', user %> |
+           <%= link_to 'Edit', edit_user_path(user) %> |
+           <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         </tr>
+       <% end %>
+     </tbody>
+   </table>
+</div>
+</div>
+
+<%= link_to "New User", new_user_path, class: "btn btn-primary" %>
+
+
+
+

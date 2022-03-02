@@ -1,0 +1,96 @@
+<div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Form<small> for new users </small></h5>
+
+        </div>
+        <div class="ibox-content">
+
+              <%= form_for(@user, controller: "users", action: "create", class: 'form-horizontal') do |f| %>
+                  <% if @user.errors.any? %>
+                      <div id="error_explanation">
+                        <h2><%= @user.errors.count %> error(es) no permitieron guardar el registro:</h2>
+
+                        <ul>
+                          <% @user.errors.full_messages.each do |msg| %>
+                              <li><%= msg %></li>
+                          <% end %>
+                        </ul>
+                      </div>
+                  <% end %>
+
+                  <div class="form-group">
+                    <div class="form-group">
+                        <%= f.label :userName, class: 'col-sm-2 control-label'%>
+                        <div class="col-sm-5">
+                            <%= f.text_field :userName, class: 'form-control', :required => true %>
+                        </div>
+                    </div>
+                    <br><br>
+                  <div class="form-group">
+                     <%= f.label :password, class: 'col-sm-2 control-label'%>
+                       <div class="col-sm-5">
+                       <% if @minimum_password_length %>
+                        <em>(<%= @minimum_password_length %> characters minimum)</em>
+                       <% end %>
+                       <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+                  </div></div>
+<br><br>
+                    <div class="form-group">
+                      <%= f.label :firstName, class: 'col-sm-2 control-label'%>
+                      <div class="col-sm-5">
+                        <%= f.text_field :firstName, class: 'form-control'%>
+                      </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                      <%= f.label :lastName, class: 'col-sm-2 control-label'%>
+                      <div class="col-sm-5">
+                        <%= f.text_field :lastName, class: 'form-control', :required => true %>
+                      </div>
+                    </div>
+
+
+<br><br>
+                        <%= f.date_field :birthDate, class: 'form-control', :required => true %>
+
+                      </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                      <%= f.label :gender, class: 'col-sm-2 control-label'%>
+                      <div class="col-sm-5">
+                        <%= f.select :gender, options_for_select(User::GENDER.collect { |gender|
+                        [gender] }, @user.gender),{}, {class:"form-select", style: "width:100px;" }  %>
+                      </div>
+                    </div>
+                    <br>
+                  </div>
+
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-2">
+                      <a href="<%= url_for :controller => 'users', :action => 'index' %>">
+                        <button class="btn btn-outline btn-danger btn-rounded" type="button"><i class="fa fa-list-ol"></i>&nbsp;Cancel</button>
+                      </a>
+
+                      <%= button_tag(type: 'submit', class: "btn btn-outline btn-success btn-rounded") do %>
+                          <i class="fa fa-database"></i> Save
+                      <% end %>
+                    </div>
+
+
+
+                  </div>
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+              <% end %>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
