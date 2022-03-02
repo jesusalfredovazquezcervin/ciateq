@@ -95,7 +95,8 @@ gem 'capistrano-passenger', '~> 0.2.0'
 gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 
 gem 'net-ssh', '>= 6.0.2'
-  gem 'ed25519', '>= 1.2', '< 2.0'
-  gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
-gem 'dotenv-rails'
-
+gem 'ed25519', '>= 1.2', '< 2.0'
+gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
+#gem 'dotenv-rails'
+gem "dotenv-rails", "~> 2.7.6"
+gem "dotenv", "~> 2.7.6"
