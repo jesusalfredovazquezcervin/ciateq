@@ -100,3 +100,4 @@ gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 #gem 'dotenv-rails'
 gem "dotenv-rails", "~> 2.7.6"
 gem "dotenv", "~> 2.7.6"
+gem "sprockets", "~> 4.0.3"
