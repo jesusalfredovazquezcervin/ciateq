@@ -1,0 +1,16 @@
+# Logfile created on 2022-03-02 04:08:57 +0000 by logger.rb/v1.4.3
+  INFO ---------------------------------------------------------------------------
+  INFO START 2022-03-02 04:08:57 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [44d60f1e] Running [ -d $HOME/.rbenv/versions/3.0.3 ] as root@147.182.231.203
+ DEBUG [44d60f1e] Command: [ -d $HOME/.rbenv/versions/3.0.3 ]
+  INFO ---------------------------------------------------------------------------
+  INFO START 2022-03-02 04:15:51 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [59515f1e] Running [ -d $HOME/.rbenv/versions/3.0.3 ] as root@147.182.231.203
+ DEBUG [59515f1e] Command: [ -d $HOME/.rbenv/versions/3.0.3 ]
+  INFO ---------------------------------------------------------------------------
+  INFO START 2022-03-02 04:32:05 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [9634ab7e] Running [ -d $HOME/.rbenv/versions/3.0.3 ] as root@147.182.231.203
+ DEBUG [9634ab7e] Command: [ -d $HOME/.rbenv/versions/3.0.3 ]
