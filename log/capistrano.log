@@ -14,3 +14,8 @@
   INFO ---------------------------------------------------------------------------
  DEBUG [9634ab7e] Running [ -d $HOME/.rbenv/versions/3.0.3 ] as root@147.182.231.203
  DEBUG [9634ab7e] Command: [ -d $HOME/.rbenv/versions/3.0.3 ]
+  INFO ---------------------------------------------------------------------------
+  INFO START 2022-03-02 04:37:07 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [d3220019] Running [ -d $HOME/.rbenv/versions/3.0.3 ] as root@147.182.231.203
+ DEBUG [d3220019] Command: [ -d $HOME/.rbenv/versions/3.0.3 ]
