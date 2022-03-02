@@ -5196,3 +5196,18 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.8ms | Allocations: 10893)
 
 
+Started GET "/users" for 200.68.129.141 at 2022-03-02 15:20:02 +0000
+Cannot render console from 200.68.129.141! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/users/index.html.erb:20
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:20
+  Rendered users/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 1611)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 85.1ms | Allocations: 10445)
+Completed 200 OK in 99ms (Views: 87.3ms | ActiveRecord: 1.1ms | Allocations: 10959)
+
+
