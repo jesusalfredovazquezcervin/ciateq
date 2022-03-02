@@ -790,3 +790,269 @@ Caused by:
 /root/.rbenv/versions/3.0.3/bin/bundle:23:in `<main>'
  DEBUG [f8212a73] 	Tasks: TOP => db:migrate => db:load_config
  DEBUG [f8212a73] 	(See full trace by running task with --trace)
+  INFO ---------------------------------------------------------------------------
+  INFO START 2022-03-02 04:52:22 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [0c15e1af] Running [ -d $HOME/.rbenv/versions/3.0.3 ] as root@147.182.231.203
+ DEBUG [0c15e1af] Command: [ -d $HOME/.rbenv/versions/3.0.3 ]
+ DEBUG [0c15e1af] Finished in 1.074 seconds with exit status 0 (successful).
+ DEBUG [f6a7bf87] Running /usr/bin/env which passenger as root@147.182.231.203
+ DEBUG [f6a7bf87] Command: /usr/bin/env which passenger
+ DEBUG [f6a7bf87] 	/usr/bin/passenger
+ DEBUG [f6a7bf87] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [83446d7d] Running /usr/bin/env mkdir -p /tmp as root@147.182.231.203
+ DEBUG [83446d7d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env mkdir -p /tmp )
+  INFO [83446d7d] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-6ed7f94e1d36e09f2c81.sh 0.0%
+  INFO Uploading /tmp/git-ssh-6ed7f94e1d36e09f2c81.sh 100.0%
+  INFO [f0a5ed0b] Running /usr/bin/env chmod 700 /tmp/git-ssh-6ed7f94e1d36e09f2c81.sh as root@147.182.231.203
+ DEBUG [f0a5ed0b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env chmod 700 /tmp/git-ssh-6ed7f94e1d36e09f2c81.sh )
+  INFO [f0a5ed0b] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [912385eb] Running /usr/bin/env git ls-remote git@github.com:jesusalfredovazquezcervin/ciateq.git HEAD as root@147.182.231.203
+ DEBUG [912385eb] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-6ed7f94e1d36e09f2c81.sh" ; /usr/bin/env git ls-remote git@github.com:jesusalfredovazquezcervin/ciateq.git HEAD )
+ DEBUG [912385eb] 	5d4724c246f87004c4ff5288401adc13bcc1f859	HEAD
+  INFO [912385eb] Finished in 1.368 seconds with exit status 0 (successful).
+  INFO [a31ae0f9] Running /usr/bin/env mkdir -p /home/deploy/ejercicio/shared /home/deploy/ejercicio/releases as root@147.182.231.203
+ DEBUG [a31ae0f9] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env mkdir -p /home/deploy/ejercicio/shared /home/deploy/ejercicio/releases )
+  INFO [a31ae0f9] Finished in 0.012 seconds with exit status 0 (successful).
+  INFO [f7a89d87] Running /usr/bin/env mkdir -p /home/deploy/ejercicio/shared/log /home/deploy/ejercicio/shared/tmp/pids /home/deploy/ejercicio/shared/tmp/cache /home/deploy/ejercicio/shared/tmp/sockets /home/deploy/ejercicio/shared/vendor/bundle /home/deploy/ejercicio/shared/.bundle /home/deploy/ejercicio/shared/public/system /home/deploy/ejercicio/shared/public/uploads /home/deploy/ejercicio/shared/public/assets as root@147.182.231.203
+ DEBUG [f7a89d87] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env mkdir -p /home/deploy/ejercicio/shared/log /home/deploy/ejercicio/shared/tmp/pids /home/deploy/ejercicio/shared/tmp/cache /home/deploy/ejercicio/shared/tmp/sockets /home/deploy/ejercicio/shared/vendor/bundle /home/deploy/ejercicio/shared/.bundle /home/deploy/ejercicio/shared/public/system /home/deploy/ejercicio/shared/public/uploads /home/deploy/ejercicio/shared/public/assets )
+  INFO [f7a89d87] Finished in 0.015 seconds with exit status 0 (successful).
+ DEBUG [58d57594] Running [ -f /home/deploy/ejercicio/current/REVISION ] as root@147.182.231.203
+ DEBUG [58d57594] Command: [ -f /home/deploy/ejercicio/current/REVISION ]
+ DEBUG [58d57594] Finished in 0.048 seconds with exit status 1 (failed).
+ DEBUG [3988289a] Running [ -f /home/deploy/ejercicio/repo/HEAD ] as root@147.182.231.203
+ DEBUG [3988289a] Command: [ -f /home/deploy/ejercicio/repo/HEAD ]
+ DEBUG [3988289a] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/ejercicio/repo
+ DEBUG [e6ce1dc2] Running if test ! -d /home/deploy/ejercicio/repo; then echo "Directory does not exist '/home/deploy/ejercicio/repo'" 1>&2; false; fi as root@147.182.231.203
+ DEBUG [e6ce1dc2] Command: if test ! -d /home/deploy/ejercicio/repo; then echo "Directory does not exist '/home/deploy/ejercicio/repo'" 1>&2; false; fi
+ DEBUG [e6ce1dc2] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [344eda98] Running /usr/bin/env git remote set-url origin git@github.com:jesusalfredovazquezcervin/ciateq.git as root@147.182.231.203
+ DEBUG [344eda98] Command: cd /home/deploy/ejercicio/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-6ed7f94e1d36e09f2c81.sh" ; /usr/bin/env git remote set-url origin git@github.com:jesusalfredovazquezcervin/ciateq.git )
+  INFO [344eda98] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO [57e42eef] Running /usr/bin/env git remote update --prune as root@147.182.231.203
+ DEBUG [57e42eef] Command: cd /home/deploy/ejercicio/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-6ed7f94e1d36e09f2c81.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [57e42eef] 	Fetching origin
+ DEBUG [57e42eef] 	From github.com:jesusalfredovazquezcervin/ciateq
+   14fc968..5d4724c  main       -> main
+  INFO [57e42eef] Finished in 1.269 seconds with exit status 0 (successful).
+ DEBUG [755c3f20] Running if test ! -d /home/deploy/ejercicio/repo; then echo "Directory does not exist '/home/deploy/ejercicio/repo'" 1>&2; false; fi as root@147.182.231.203
+ DEBUG [755c3f20] Command: if test ! -d /home/deploy/ejercicio/repo; then echo "Directory does not exist '/home/deploy/ejercicio/repo'" 1>&2; false; fi
+ DEBUG [755c3f20] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [a36ab2f0] Running /usr/bin/env mkdir -p /home/deploy/ejercicio/releases/20220302045224 as root@147.182.231.203
+ DEBUG [a36ab2f0] Command: cd /home/deploy/ejercicio/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-6ed7f94e1d36e09f2c81.sh" ; /usr/bin/env mkdir -p /home/deploy/ejercicio/releases/20220302045224 )
+  INFO [a36ab2f0] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO [ee7b4303] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/ejercicio/releases/20220302045224 as root@147.182.231.203
+ DEBUG [ee7b4303] Command: cd /home/deploy/ejercicio/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-6ed7f94e1d36e09f2c81.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/ejercicio/releases/20220302045224 )
+  INFO [ee7b4303] Finished in 0.317 seconds with exit status 0 (successful).
+ DEBUG [7869bb71] Running if test ! -d /home/deploy/ejercicio/repo; then echo "Directory does not exist '/home/deploy/ejercicio/repo'" 1>&2; false; fi as root@147.182.231.203
+ DEBUG [7869bb71] Command: if test ! -d /home/deploy/ejercicio/repo; then echo "Directory does not exist '/home/deploy/ejercicio/repo'" 1>&2; false; fi
+ DEBUG [7869bb71] Finished in 0.007 seconds with exit status 0 (successful).
+ DEBUG [f5458d90] Running /usr/bin/env git rev-list --max-count=1 master as root@147.182.231.203
+ DEBUG [f5458d90] Command: cd /home/deploy/ejercicio/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-6ed7f94e1d36e09f2c81.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [f5458d90] 	a1ca0e4f55ec793ce9ca349b9c0bae8c1542de59
+ DEBUG [f5458d90] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [2ee5bcfc] Running if test ! -d /home/deploy/ejercicio/releases/20220302045224; then echo "Directory does not exist '/home/deploy/ejercicio/releases/20220302045224'" 1>&2; false; fi as root@147.182.231.203
+ DEBUG [2ee5bcfc] Command: if test ! -d /home/deploy/ejercicio/releases/20220302045224; then echo "Directory does not exist '/home/deploy/ejercicio/releases/20220302045224'" 1>&2; false; fi
+ DEBUG [2ee5bcfc] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [6e38a87e] Running /usr/bin/env echo "a1ca0e4f55ec793ce9ca349b9c0bae8c1542de59" > REVISION as root@147.182.231.203
+ DEBUG [6e38a87e] Command: cd /home/deploy/ejercicio/releases/20220302045224 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env echo "a1ca0e4f55ec793ce9ca349b9c0bae8c1542de59" > REVISION )
+  INFO [6e38a87e] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [fc21be1a] Running /usr/bin/env mkdir -p /home/deploy/ejercicio/releases/20220302045224 /home/deploy/ejercicio/releases/20220302045224/tmp /home/deploy/ejercicio/releases/20220302045224/vendor /home/deploy/ejercicio/releases/20220302045224/public as root@147.182.231.203
+ DEBUG [fc21be1a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env mkdir -p /home/deploy/ejercicio/releases/20220302045224 /home/deploy/ejercicio/releases/20220302045224/tmp /home/deploy/ejercicio/releases/20220302045224/vendor /home/deploy/ejercicio/releases/20220302045224/public )
+  INFO [fc21be1a] Finished in 0.012 seconds with exit status 0 (successful).
+ DEBUG [4e2ec9e9] Running [ -L /home/deploy/ejercicio/releases/20220302045224/log ] as root@147.182.231.203
+ DEBUG [4e2ec9e9] Command: [ -L /home/deploy/ejercicio/releases/20220302045224/log ]
+ DEBUG [4e2ec9e9] Finished in 0.007 seconds with exit status 1 (failed).
+ DEBUG [967c909c] Running [ -d /home/deploy/ejercicio/releases/20220302045224/log ] as root@147.182.231.203
+ DEBUG [967c909c] Command: [ -d /home/deploy/ejercicio/releases/20220302045224/log ]
+ DEBUG [967c909c] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [14d913f8] Running /usr/bin/env rm -rf /home/deploy/ejercicio/releases/20220302045224/log as root@147.182.231.203
+ DEBUG [14d913f8] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env rm -rf /home/deploy/ejercicio/releases/20220302045224/log )
+  INFO [14d913f8] Finished in 0.012 seconds with exit status 0 (successful).
+  INFO [fa290f99] Running /usr/bin/env ln -s /home/deploy/ejercicio/shared/log /home/deploy/ejercicio/releases/20220302045224/log as root@147.182.231.203
+ DEBUG [fa290f99] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env ln -s /home/deploy/ejercicio/shared/log /home/deploy/ejercicio/releases/20220302045224/log )
+  INFO [fa290f99] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [7c93d170] Running [ -L /home/deploy/ejercicio/releases/20220302045224/tmp/pids ] as root@147.182.231.203
+ DEBUG [7c93d170] Command: [ -L /home/deploy/ejercicio/releases/20220302045224/tmp/pids ]
+ DEBUG [7c93d170] Finished in 0.009 seconds with exit status 1 (failed).
+ DEBUG [7231b4e8] Running [ -d /home/deploy/ejercicio/releases/20220302045224/tmp/pids ] as root@147.182.231.203
+ DEBUG [7231b4e8] Command: [ -d /home/deploy/ejercicio/releases/20220302045224/tmp/pids ]
+ DEBUG [7231b4e8] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [70e69186] Running /usr/bin/env rm -rf /home/deploy/ejercicio/releases/20220302045224/tmp/pids as root@147.182.231.203
+ DEBUG [70e69186] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env rm -rf /home/deploy/ejercicio/releases/20220302045224/tmp/pids )
+  INFO [70e69186] Finished in 0.012 seconds with exit status 0 (successful).
+  INFO [52650846] Running /usr/bin/env ln -s /home/deploy/ejercicio/shared/tmp/pids /home/deploy/ejercicio/releases/20220302045224/tmp/pids as root@147.182.231.203
+ DEBUG [52650846] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env ln -s /home/deploy/ejercicio/shared/tmp/pids /home/deploy/ejercicio/releases/20220302045224/tmp/pids )
+  INFO [52650846] Finished in 0.052 seconds with exit status 0 (successful).
+ DEBUG [dadee28d] Running [ -L /home/deploy/ejercicio/releases/20220302045224/tmp/cache ] as root@147.182.231.203
+ DEBUG [dadee28d] Command: [ -L /home/deploy/ejercicio/releases/20220302045224/tmp/cache ]
+ DEBUG [dadee28d] Finished in 0.008 seconds with exit status 1 (failed).
+ DEBUG [c2048cb5] Running [ -d /home/deploy/ejercicio/releases/20220302045224/tmp/cache ] as root@147.182.231.203
+ DEBUG [c2048cb5] Command: [ -d /home/deploy/ejercicio/releases/20220302045224/tmp/cache ]
+ DEBUG [c2048cb5] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [c4024d30] Running /usr/bin/env rm -rf /home/deploy/ejercicio/releases/20220302045224/tmp/cache as root@147.182.231.203
+ DEBUG [c4024d30] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env rm -rf /home/deploy/ejercicio/releases/20220302045224/tmp/cache )
+  INFO [c4024d30] Finished in 0.077 seconds with exit status 0 (successful).
+  INFO [34a46f9a] Running /usr/bin/env ln -s /home/deploy/ejercicio/shared/tmp/cache /home/deploy/ejercicio/releases/20220302045224/tmp/cache as root@147.182.231.203
+ DEBUG [34a46f9a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env ln -s /home/deploy/ejercicio/shared/tmp/cache /home/deploy/ejercicio/releases/20220302045224/tmp/cache )
+  INFO [34a46f9a] Finished in 0.012 seconds with exit status 0 (successful).
+ DEBUG [aad1db02] Running [ -L /home/deploy/ejercicio/releases/20220302045224/tmp/sockets ] as root@147.182.231.203
+ DEBUG [aad1db02] Command: [ -L /home/deploy/ejercicio/releases/20220302045224/tmp/sockets ]
+ DEBUG [aad1db02] Finished in 0.007 seconds with exit status 1 (failed).
+ DEBUG [0b81f2f0] Running [ -d /home/deploy/ejercicio/releases/20220302045224/tmp/sockets ] as root@147.182.231.203
+ DEBUG [0b81f2f0] Command: [ -d /home/deploy/ejercicio/releases/20220302045224/tmp/sockets ]
+ DEBUG [0b81f2f0] Finished in 0.049 seconds with exit status 1 (failed).
+  INFO [ed730804] Running /usr/bin/env ln -s /home/deploy/ejercicio/shared/tmp/sockets /home/deploy/ejercicio/releases/20220302045224/tmp/sockets as root@147.182.231.203
+ DEBUG [ed730804] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env ln -s /home/deploy/ejercicio/shared/tmp/sockets /home/deploy/ejercicio/releases/20220302045224/tmp/sockets )
+  INFO [ed730804] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [bf468eda] Running [ -L /home/deploy/ejercicio/releases/20220302045224/vendor/bundle ] as root@147.182.231.203
+ DEBUG [bf468eda] Command: [ -L /home/deploy/ejercicio/releases/20220302045224/vendor/bundle ]
+ DEBUG [bf468eda] Finished in 0.008 seconds with exit status 1 (failed).
+ DEBUG [89c0318c] Running [ -d /home/deploy/ejercicio/releases/20220302045224/vendor/bundle ] as root@147.182.231.203
+ DEBUG [89c0318c] Command: [ -d /home/deploy/ejercicio/releases/20220302045224/vendor/bundle ]
+ DEBUG [89c0318c] Finished in 0.008 seconds with exit status 1 (failed).
+  INFO [f8ea7060] Running /usr/bin/env ln -s /home/deploy/ejercicio/shared/vendor/bundle /home/deploy/ejercicio/releases/20220302045224/vendor/bundle as root@147.182.231.203
+ DEBUG [f8ea7060] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env ln -s /home/deploy/ejercicio/shared/vendor/bundle /home/deploy/ejercicio/releases/20220302045224/vendor/bundle )
+  INFO [f8ea7060] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG [163d523c] Running [ -L /home/deploy/ejercicio/releases/20220302045224/.bundle ] as root@147.182.231.203
+ DEBUG [163d523c] Command: [ -L /home/deploy/ejercicio/releases/20220302045224/.bundle ]
+ DEBUG [163d523c] Finished in 0.008 seconds with exit status 1 (failed).
+ DEBUG [193cd436] Running [ -d /home/deploy/ejercicio/releases/20220302045224/.bundle ] as root@147.182.231.203
+ DEBUG [193cd436] Command: [ -d /home/deploy/ejercicio/releases/20220302045224/.bundle ]
+ DEBUG [193cd436] Finished in 0.051 seconds with exit status 1 (failed).
+  INFO [21285d6b] Running /usr/bin/env ln -s /home/deploy/ejercicio/shared/.bundle /home/deploy/ejercicio/releases/20220302045224/.bundle as root@147.182.231.203
+ DEBUG [21285d6b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env ln -s /home/deploy/ejercicio/shared/.bundle /home/deploy/ejercicio/releases/20220302045224/.bundle )
+  INFO [21285d6b] Finished in 0.013 seconds with exit status 0 (successful).
+ DEBUG [63747493] Running [ -L /home/deploy/ejercicio/releases/20220302045224/public/system ] as root@147.182.231.203
+ DEBUG [63747493] Command: [ -L /home/deploy/ejercicio/releases/20220302045224/public/system ]
+ DEBUG [63747493] Finished in 0.008 seconds with exit status 1 (failed).
+ DEBUG [2e9d68f6] Running [ -d /home/deploy/ejercicio/releases/20220302045224/public/system ] as root@147.182.231.203
+ DEBUG [2e9d68f6] Command: [ -d /home/deploy/ejercicio/releases/20220302045224/public/system ]
+ DEBUG [2e9d68f6] Finished in 0.048 seconds with exit status 1 (failed).
+  INFO [eb1c3705] Running /usr/bin/env ln -s /home/deploy/ejercicio/shared/public/system /home/deploy/ejercicio/releases/20220302045224/public/system as root@147.182.231.203
+ DEBUG [eb1c3705] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env ln -s /home/deploy/ejercicio/shared/public/system /home/deploy/ejercicio/releases/20220302045224/public/system )
+  INFO [eb1c3705] Finished in 0.012 seconds with exit status 0 (successful).
+ DEBUG [def13fe4] Running [ -L /home/deploy/ejercicio/releases/20220302045224/public/uploads ] as root@147.182.231.203
+ DEBUG [def13fe4] Command: [ -L /home/deploy/ejercicio/releases/20220302045224/public/uploads ]
+ DEBUG [def13fe4] Finished in 0.008 seconds with exit status 1 (failed).
+ DEBUG [597d31c1] Running [ -d /home/deploy/ejercicio/releases/20220302045224/public/uploads ] as root@147.182.231.203
+ DEBUG [597d31c1] Command: [ -d /home/deploy/ejercicio/releases/20220302045224/public/uploads ]
+ DEBUG [597d31c1] Finished in 0.008 seconds with exit status 1 (failed).
+  INFO [1059c504] Running /usr/bin/env ln -s /home/deploy/ejercicio/shared/public/uploads /home/deploy/ejercicio/releases/20220302045224/public/uploads as root@147.182.231.203
+ DEBUG [1059c504] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env ln -s /home/deploy/ejercicio/shared/public/uploads /home/deploy/ejercicio/releases/20220302045224/public/uploads )
+  INFO [1059c504] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [8eed75f4] Running [ -L /home/deploy/ejercicio/releases/20220302045224/public/assets ] as root@147.182.231.203
+ DEBUG [8eed75f4] Command: [ -L /home/deploy/ejercicio/releases/20220302045224/public/assets ]
+ DEBUG [8eed75f4] Finished in 0.007 seconds with exit status 1 (failed).
+ DEBUG [a47a30c9] Running [ -d /home/deploy/ejercicio/releases/20220302045224/public/assets ] as root@147.182.231.203
+ DEBUG [a47a30c9] Command: [ -d /home/deploy/ejercicio/releases/20220302045224/public/assets ]
+ DEBUG [a47a30c9] Finished in 0.008 seconds with exit status 1 (failed).
+  INFO [bce2983e] Running /usr/bin/env ln -s /home/deploy/ejercicio/shared/public/assets /home/deploy/ejercicio/releases/20220302045224/public/assets as root@147.182.231.203
+ DEBUG [bce2983e] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env ln -s /home/deploy/ejercicio/shared/public/assets /home/deploy/ejercicio/releases/20220302045224/public/assets )
+  INFO [bce2983e] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [ca81e672] Running if test ! -d /home/deploy/ejercicio/releases/20220302045224; then echo "Directory does not exist '/home/deploy/ejercicio/releases/20220302045224'" 1>&2; false; fi as root@147.182.231.203
+ DEBUG [ca81e672] Command: if test ! -d /home/deploy/ejercicio/releases/20220302045224; then echo "Directory does not exist '/home/deploy/ejercicio/releases/20220302045224'" 1>&2; false; fi
+ DEBUG [ca81e672] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [b482b8b7] Running $HOME/.rbenv/bin/rbenv exec bundle config --local deployment true as root@147.182.231.203
+ DEBUG [b482b8b7] Command: cd /home/deploy/ejercicio/releases/20220302045224 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; $HOME/.rbenv/bin/rbenv exec bundle config --local deployment true )
+  INFO [b482b8b7] Finished in 0.322 seconds with exit status 0 (successful).
+  INFO [e62593d8] Running $HOME/.rbenv/bin/rbenv exec bundle config --local path /home/deploy/ejercicio/shared/bundle as root@147.182.231.203
+ DEBUG [e62593d8] Command: cd /home/deploy/ejercicio/releases/20220302045224 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; $HOME/.rbenv/bin/rbenv exec bundle config --local path /home/deploy/ejercicio/shared/bundle )
+  INFO [e62593d8] Finished in 0.359 seconds with exit status 0 (successful).
+  INFO [1833bf23] Running $HOME/.rbenv/bin/rbenv exec bundle config --local without development:test as root@147.182.231.203
+ DEBUG [1833bf23] Command: cd /home/deploy/ejercicio/releases/20220302045224 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; $HOME/.rbenv/bin/rbenv exec bundle config --local without development:test )
+  INFO [1833bf23] Finished in 0.339 seconds with exit status 0 (successful).
+ DEBUG [3699b038] Running if test ! -d /home/deploy/ejercicio/releases/20220302045224; then echo "Directory does not exist '/home/deploy/ejercicio/releases/20220302045224'" 1>&2; false; fi as root@147.182.231.203
+ DEBUG [3699b038] Command: if test ! -d /home/deploy/ejercicio/releases/20220302045224; then echo "Directory does not exist '/home/deploy/ejercicio/releases/20220302045224'" 1>&2; false; fi
+ DEBUG [3699b038] Finished in 0.007 seconds with exit status 0 (successful).
+ DEBUG [09672fb3] Running $HOME/.rbenv/bin/rbenv exec bundle check as root@147.182.231.203
+ DEBUG [09672fb3] Command: cd /home/deploy/ejercicio/releases/20220302045224 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; $HOME/.rbenv/bin/rbenv exec bundle check )
+ DEBUG [09672fb3] 	The Gemfile's dependencies are satisfied
+ DEBUG [09672fb3] Finished in 0.636 seconds with exit status 0 (successful).
+  INFO The Gemfile's dependencies are satisfied, skipping installation
+ DEBUG [8cb4fcb8] Running if test ! -d /home/deploy/ejercicio/releases/20220302045224; then echo "Directory does not exist '/home/deploy/ejercicio/releases/20220302045224'" 1>&2; false; fi as root@147.182.231.203
+ DEBUG [8cb4fcb8] Command: if test ! -d /home/deploy/ejercicio/releases/20220302045224; then echo "Directory does not exist '/home/deploy/ejercicio/releases/20220302045224'" 1>&2; false; fi
+ DEBUG [8cb4fcb8] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [bcdb1d00] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as root@147.182.231.203
+ DEBUG [bcdb1d00] Command: cd /home/deploy/ejercicio/releases/20220302045224 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" RAILS_ENV="production" RAILS_GROUPS="" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+  INFO [bcdb1d00] Finished in 5.825 seconds with exit status 0 (successful).
+ DEBUG [b9ce1b10] Running if test ! -d /home/deploy/ejercicio/releases/20220302045224; then echo "Directory does not exist '/home/deploy/ejercicio/releases/20220302045224'" 1>&2; false; fi as root@147.182.231.203
+ DEBUG [b9ce1b10] Command: if test ! -d /home/deploy/ejercicio/releases/20220302045224; then echo "Directory does not exist '/home/deploy/ejercicio/releases/20220302045224'" 1>&2; false; fi
+ DEBUG [b9ce1b10] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [1ac18f0c] Running /usr/bin/env mkdir -p /home/deploy/ejercicio/releases/20220302045224/assets_manifest_backup as root@147.182.231.203
+ DEBUG [1ac18f0c] Command: cd /home/deploy/ejercicio/releases/20220302045224 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env mkdir -p /home/deploy/ejercicio/releases/20220302045224/assets_manifest_backup )
+  INFO [1ac18f0c] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [fc47c392] Running /usr/bin/env ls /home/deploy/ejercicio/releases/20220302045224/public/assets/.sprockets-manifest* as root@147.182.231.203
+ DEBUG [fc47c392] Command: cd /home/deploy/ejercicio/releases/20220302045224 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env ls /home/deploy/ejercicio/releases/20220302045224/public/assets/.sprockets-manifest* )
+ DEBUG [fc47c392] 	/home/deploy/ejercicio/releases/20220302045224/public/assets/.sprockets-manifest-7a953449f0bf4e8e1d51a6c4633a8f2e.json
+ DEBUG [fc47c392] Finished in 0.010 seconds with exit status 0 (successful).
+ DEBUG [ad192a12] Running /usr/bin/env ls /home/deploy/ejercicio/releases/20220302045224/public/assets/.sprockets-manifest* as root@147.182.231.203
+ DEBUG [ad192a12] Command: cd /home/deploy/ejercicio/releases/20220302045224 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env ls /home/deploy/ejercicio/releases/20220302045224/public/assets/.sprockets-manifest* )
+ DEBUG [ad192a12] 	/home/deploy/ejercicio/releases/20220302045224/public/assets/.sprockets-manifest-7a953449f0bf4e8e1d51a6c4633a8f2e.json
+ DEBUG [ad192a12] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [6f65a082] Running /usr/bin/env cp /home/deploy/ejercicio/releases/20220302045224/public/assets/.sprockets-manifest-7a953449f0bf4e8e1d51a6c4633a8f2e.json /home/deploy/ejercicio/releases/20220302045224/assets_manifest_backup as root@147.182.231.203
+ DEBUG [6f65a082] Command: cd /home/deploy/ejercicio/releases/20220302045224 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" ; /usr/bin/env cp /home/deploy/ejercicio/releases/20220302045224/public/assets/.sprockets-manifest-7a953449f0bf4e8e1d51a6c4633a8f2e.json /home/deploy/ejercicio/releases/20220302045224/assets_manifest_backup )
+  INFO [6f65a082] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [310fca30] Running if test ! -d /home/deploy/ejercicio/releases/20220302045224; then echo "Directory does not exist '/home/deploy/ejercicio/releases/20220302045224'" 1>&2; false; fi as root@147.182.231.203
+ DEBUG [310fca30] Command: if test ! -d /home/deploy/ejercicio/releases/20220302045224; then echo "Directory does not exist '/home/deploy/ejercicio/releases/20220302045224'" 1>&2; false; fi
+ DEBUG [310fca30] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [d7e4dcb0] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate as root@147.182.231.203
+ DEBUG [d7e4dcb0] Command: cd /home/deploy/ejercicio/releases/20220302045224 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="3.0.3" RAILS_ENV="production" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate )
+ DEBUG [d7e4dcb0] 	rake aborted!
+ DEBUG [d7e4dcb0] 	LoadError: Error loading the 'postgresql' Active Record adapter. Missing a gem it depends on? pg is not part of the bundle. Add it to your Gemfile.
+ DEBUG [d7e4dcb0] 	/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activerecord-7.0.2.2/lib/active_record/connection_adapters/postgresql_adapter.rb:3:in `<main>'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/bootsnap-1.10.3/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/bootsnap-1.10.3/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/zeitwerk-2.5.4/lib/zeitwerk/kernel.rb:35:in `require'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activerecord-7.0.2.2/lib/active_record/connection_adapters/abstract/connection_handler.rb:268:in `resolve_pool_config'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activerecord-7.0.2.2/lib/active_record/connection_adapters/abstract/connection_handler.rb:129:in `establish_connection'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activerecord-7.0.2.2/lib/active_record/connection_handling.rb:52:in `establish_connection'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activerecord-7.0.2.2/lib/active_record/railtie.rb:278:in `block (2 levels) in <class:Railtie>'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activesupport-7.0.2.2/lib/active_support/lazy_load_hooks.rb:71:in `class_eval'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activesupport-7.0.2.2/lib/active_support/lazy_load_hooks.rb:71:in `block in execute_hook'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activesupport-7.0.2.2/lib/active_support/lazy_load_hooks.rb:61:in `with_execution_control'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activesupport-7.0.2.2/lib/active_support/lazy_load_hooks.rb:66:in `execute_hook'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activesupport-7.0.2.2/lib/active_support/lazy_load_hooks.rb:52:in `block in run_load_hooks'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activesupport-7.0.2.2/lib/active_support/lazy_load_hooks.rb:51:in `each'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activesupport-7.0.2.2/lib/active_support/lazy_load_hooks.rb:51:in `run_load_hooks'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activerecord-7.0.2.2/lib/active_record/base.rb:333:in `<module:ActiveRecord>'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activerecord-7.0.2.2/lib/active_record/base.rb:15:in `<main>'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/bootsnap-1.10.3/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/bootsnap-1.10.3/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/zeitwerk-2.5.4/lib/zeitwerk/kernel.rb:35:in `require'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activerecord-7.0.2.2/lib/active_record/railties/databases.rake:22:in `block (2 levels) in <main>'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/rake-13.0.6/exe/rake:27:in `<top (required)>'
+/root/.rbenv/versions/3.0.3/bin/bundle:23:in `load'
+/root/.rbenv/versions/3.0.3/bin/bundle:23:in `<main>'
+ DEBUG [d7e4dcb0] 	
+Caused by:
+ DEBUG [d7e4dcb0] 	Gem::LoadError: pg is not part of the bundle. Add it to your Gemfile.
+ DEBUG [d7e4dcb0] 	/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activerecord-7.0.2.2/lib/active_record/connection_adapters/postgresql_adapter.rb:3:in `<main>'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/bootsnap-1.10.3/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/bootsnap-1.10.3/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/zeitwerk-2.5.4/lib/zeitwerk/kernel.rb:35:in `require'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activerecord-7.0.2.2/lib/active_record/connection_adapters/abstract/connection_handler.rb:268:in `resolve_pool_config'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activerecord-7.0.2.2/lib/active_record/connection_adapters/abstract/connection_handler.rb:129:in `establish_connection'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activerecord-7.0.2.2/lib/active_record/connection_handling.rb:52:in `establish_connection'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activerecord-7.0.2.2/lib/active_record/railtie.rb:278:in `block (2 levels) in <class:Railtie>'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activesupport-7.0.2.2/lib/active_support/lazy_load_hooks.rb:71:in `class_eval'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activesupport-7.0.2.2/lib/active_support/lazy_load_hooks.rb:71:in `block in execute_hook'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activesupport-7.0.2.2/lib/active_support/lazy_load_hooks.rb:61:in `with_execution_control'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activesupport-7.0.2.2/lib/active_support/lazy_load_hooks.rb:66:in `execute_hook'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activesupport-7.0.2.2/lib/active_support/lazy_load_hooks.rb:52:in `block in run_load_hooks'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activesupport-7.0.2.2/lib/active_support/lazy_load_hooks.rb:51:in `each'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activesupport-7.0.2.2/lib/active_support/lazy_load_hooks.rb:51:in `run_load_hooks'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activerecord-7.0.2.2/lib/active_record/base.rb:333:in `<module:ActiveRecord>'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activerecord-7.0.2.2/lib/active_record/base.rb:15:in `<main>'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/bootsnap-1.10.3/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/bootsnap-1.10.3/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/zeitwerk-2.5.4/lib/zeitwerk/kernel.rb:35:in `require'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/activerecord-7.0.2.2/lib/active_record/railties/databases.rake:22:in `block (2 levels) in <main>'
+/home/deploy/ejercicio/shared/bundle/ruby/3.0.0/gems/rake-13.0.6/exe/rake:27:in `<top (required)>'
+/root/.rbenv/versions/3.0.3/bin/bundle:23:in `load'
+/root/.rbenv/versions/3.0.3/bin/bundle:23:in `<main>'
+ DEBUG [d7e4dcb0] 	Tasks: TOP => db:migrate => db:load_config
+ DEBUG [d7e4dcb0] 	(See full trace by running task with --trace)
