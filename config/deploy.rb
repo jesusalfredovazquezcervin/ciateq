@@ -1,13 +1,13 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.16.0"
 
-set :application, "ejercicio"
+set :application, "ciateq"
 set :repo_url, "git@github.com:jesusalfredovazquezcervin/ciateq.git"
 set :deploy_to, "/home/deploy/#{fetch :application}"
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 set :keep_releases, 5
-server '147.182.231.203', user: 'root', roles: %w{app db web}
-append :linked_files, "config/database.yml", "config/credentials.yml.enc", "config/master.key", ".env"
+#server '147.182.231.203', user: 'root', roles: %w{app db web}
+
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
